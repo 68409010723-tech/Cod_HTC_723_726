@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/p01_csscod.css">
+        <style>
+                .ITISB_BUTTON {
+            background-color: #f95e10;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            }
+
+            .ITISB_BUTTON:hover {
+                background-color: #a53f0c;
+            }
+/*โค๊ดส่วน ber menu------------------------------------------------*/
+        .image-box {
+            background-image: url('img/icon/home_iden.png'); /* รูปปกติ */
+            background-size: cover; /* แสดงรูปให้เต็มพื้นที่ */
+            transition: 0.3s; /* เพิ่มความสมูทตอนเปลี่ยนรูป */
+            width: 60px;
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .image-box:hover {
+            background-image: url('img/icon/home_hover.png'); /* รูปตอนเอาเมาส์ชี้ */
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: #333;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-radius: 8px;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff9800;
+        }
+
+        /* จัดการรายการเมนู */
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            padding: 0 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            border-radius: 5px;
+            padding: 10px 8px;
+            color: white;
+            background-color: #333;
+            transition: 0.3s;
+            margin: 5px 5px;
+        }
+
+        .nav-links a:hover {
+            color: #ff9800;
+            background-color: #ffffff;
+        }
+/*โค๊ดส่วน dropdown menu------------------------------------------------*/
+        .dropdown {
+            position: relative; /* เพื่อให้เมนูย่อยอ้างอิงตำแหน่งจากตัวมัน */
+            width: 35px;
+            }
+        /* ซ่อนเมนูย่อยไว้ */
+        .dropdown-content {
+            display: none;
+            position: absolute; /* ลอยทับเนื้อหาด้านล่าง */
+            background-color: #444; /* สีพื้นหลังเมนูย่อย */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            list-style: none;
+            padding: 0;
+            top: 150%; /* ให้เริ่มแสดงต่อจากขอบล่างของเมนูหลักพอดี */
+            left: 0;
+            text-align: center;
+            border-radius: 8px;
+        }
+        /* ปรับแต่งรายการในเมนูย่อย */
+        .dropdown-content li a {
+            color: white;
+            padding: 4px 16px;
+            display: block; /* ให้คลิกได้เต็มแถว */
+            text-decoration: none;
+            width: 200px;
+        }
+
+        /* --- ส่วนสำคัญ: เมื่อเอาเมาส์ชี้ที่ .dropdown ให้แสดง .dropdown-content --- */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+/*ส่วนจัดการตาราง--------------------------------------------------------------------------------*/
+        table,tr,th,td {
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 20px;
+            margin: 25px 35px  ;
+            border-style: solid;
+            border-color: #2d2d2d;
+            border-collapse: collapse;
+        }
+        .css_classinhead{
+            color: rgb(4, 120, 120);
+            font-size: 28px;
+        }
+        </style>
+    </head>
+<body>
+
+    <!-- บาร์หัวเว็บ------------------------------------------------------------------------------ -->
+    <header class="navbar">
+        <a href="home_p00_html.html"><div class="image-box"></div></a>
+    
+        <div class="logo">LearnCode.</div>
+
+        <nav>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a>HTML</a>
+                    <ul class="dropdown-content">
+                        <li><a href="p01_htmlbasic.html">HTML Basic</a></li>
+                        <li><a href="p02_htmlattributes.html">HTML Attributes</a></li>
+                        <li><a href="p03_htmlformatting.html">HTML Formatting</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a>CSS</a>
+                    <ul class="dropdown-content">
+                        <li><a href="p01_cssselectors.html">CSS Selectors</a></li>
+                        <li><a href="p02_csshowto.html">How To Add CSS</a></li>
+                        <li><a href="p03_cssborderstyle.html">CSS Border Style</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+<table>
+    <tr style="background-color: #0db840;color: rgb(255, 255, 255);">
+        <th style="padding: 10px 0px;">
+           โค๊ดส่วน style 
+        </th>
+        <th style="padding: 10px 0px;">
+            การกำหนดภายในแท็ก
+        </th style="padding: 10px 0px;">
+        <th style="padding: 10px 0px;">
+            ผลลัพธ์
+        </th>
+    </tr>
+
+    <tr>
+        <th colspan="3" style="padding: 10px 0px;">
+           External CSS
+        </th>
+    </tr>
+    
+    <tr>
+        <td>
+            <p style="text-align: left;">การเชื่อมไฟล์ CSS ในไฟล์ HTML ภายแท็ก head</p>
+            <img src="img/cb_02/ผลลัพธ์01_1.png" alt="ตัวอย่าง">
+            <p style="text-align: left;">คำสั่งในไฟล์ CSS</p>
+            <img src="img/cb_02/ผลลัพธ์01_2.png" alt="ตัวอย่าง">
+        </td>
+        <td>
+            <img src="img/cb_02/ผลลัพธ์01_3.png" alt="ตัวอย่าง">
+        </td>
+        <td>
+            <p id="idcssz">ตัวอย่างการใช้ CSS แบบ External CSS</p>
+        </td>
+    </tr>
+
+    <tr>
+        <th colspan="3" style="padding: 10px 0px;">
+           Internal CSS
+        </th>
+    </tr>
+
+    <tr>
+        <td>
+            <img src="img/cb_02/ผลลัพธ์02_1.png" alt="ตัวอย่าง">
+        </td>
+        <td>
+            <img src="img/cb_02/ผลลัพธ์02_2.png" alt="ตัวอย่าง">
+        </td>
+        <td>
+            <p class="css_classinhead" style="width: 400px;">ตัวอย่างการใช้ CSS แบบ Internal CSS</p>
+        </td>
+    </tr>
+
+    <tr>
+        <th colspan="3" style="padding: 10px 0px;">
+           Inline CSS
+        </th>
+    </tr>
+
+    <tr>
+        <td colspan="2">
+            <img src="img/cb_02/ผลลัพธ์03_1.png" alt="ตัวอย่าง">
+        </td>
+        <td>
+            <p style="color: rgb(4, 4, 120);font-size: 20px;">ตัวอย่างการใช้ CSS แบบ Inline CSS</p>
+        </td>
+    </tr>
+</table>
+
+<br>
+<button class="ITISB_BUTTON" onclick="history.back()">ย้อนกลับ</button>
+
+</body>
+</html>
+

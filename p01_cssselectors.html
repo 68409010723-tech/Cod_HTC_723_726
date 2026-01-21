@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Formatting HTML_723_726</title>
+    <style>
+        body {
+            background-color: rgb(218, 255, 235);
+        }
+
+        .ITISBUTTON {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .ITISBUTTON:hover {
+            background-color: #218838;
+        }
+
+        .ITISB_BUTTON {
+            background-color: #f95e10;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .ITISB_BUTTON:hover {
+            background-color: #a53f0c;
+        }
+
+        h1 {
+            color: rgb(1, 40, 35);
+            text-align: center;
+        }
+
+        h2 {
+            color: rgb(4, 34, 89);
+        }
+
+        hr {
+            border-color: rgb(2, 55, 24);
+            width: 999px;
+        }
+
+        p {
+            color: rgb(2, 50, 60);
+        }
+/*โค๊ดส่วน ber menu------------------------------------------------*/
+        .image-box {
+            background-image: url('img/icon/home_iden.png'); /* รูปปกติ */
+            background-size: cover; /* แสดงรูปให้เต็มพื้นที่ */
+            transition: 0.3s; /* เพิ่มความสมูทตอนเปลี่ยนรูป */
+            width: 60px;
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .image-box:hover {
+            background-image: url('img/icon/home_hover.png'); /* รูปตอนเอาเมาส์ชี้ */
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: #333;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-radius: 8px;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff9800;
+        }
+
+        /* จัดการรายการเมนู */
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            padding: 0 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            border-radius: 5px;
+            padding: 10px 8px;
+            color: white;
+            background-color: #333;
+            transition: 0.3s;
+            margin: 5px 5px;
+        }
+
+        .nav-links a:hover {
+            color: #ff9800;
+            background-color: #ffffff;
+        }
+/*โค๊ดส่วน dropdown menu------------------------------------------------*/
+        .dropdown {
+            position: relative; /* เพื่อให้เมนูย่อยอ้างอิงตำแหน่งจากตัวมัน */
+            width: 35px;
+            }
+        /* ซ่อนเมนูย่อยไว้ */
+        .dropdown-content {
+            display: none;
+            position: absolute; /* ลอยทับเนื้อหาด้านล่าง */
+            background-color: #444; /* สีพื้นหลังเมนูย่อย */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            list-style: none;
+            padding: 0;
+            top: 150%; /* ให้เริ่มแสดงต่อจากขอบล่างของเมนูหลักพอดี */
+            left: 0;
+            text-align: center;
+            border-radius: 8px;
+        }
+        /* ปรับแต่งรายการในเมนูย่อย */
+        .dropdown-content li a {
+            color: white;
+            padding: 4px 16px;
+            display: block; /* ให้คลิกได้เต็มแถว */
+            text-decoration: none;
+            width: 200px;
+        }
+
+        /* --- ส่วนสำคัญ: เมื่อเอาเมาส์ชี้ที่ .dropdown ให้แสดง .dropdown-content --- */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        td,th,tr {
+            border-style: solid;
+            padding: 9px;
+            border-color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <!-- บาร์หัวเว็บ------------------------------------------------------------------------------ -->
+    <header class="navbar">
+        <a href="home_p00_html.html"><div class="image-box"></div></a>
+    
+        <div class="logo">LearnCode.</div>
+
+        <nav>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a>HTML</a>
+                    <ul class="dropdown-content">
+                        <li><a href="p01_htmlbasic.html">HTML Basic</a></li>
+                        <li><a href="p02_htmlattributes.html">HTML Attributes</a></li>
+                        <li><a href="p03_htmlformatting.html">HTML Formatting</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a>CSS</a>
+                    <ul class="dropdown-content">
+                        <li><a href="p01_cssselectors.html">CSS Selectors</a></li>
+                        <li><a href="p02_csshowto.html">How To Add CSS</a></li>
+                        <li><a href="p03_cssborderstyle.html">CSS Border Style</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <h1>CSS Selectors</h1>
+    <table style="border-collapse: collapse;margin-left: 500px;">
+
+        <tr style="background-color: #045f17;color: #ffffff;">
+            <p>
+                <th>วิธีใช้</th>
+                <th>ตัวอย่าง</th>
+                <th>คำอธิบาย</th>
+            </p>
+        </tr>
+
+        <tr style="background-color: #c3ffd0;">
+            <p>
+                <td># + ชื่อid</td>
+                <td>#exit_button</td>
+                <td>มีผลกับแท็กที่กำหนด id="exit_button"</td>
+            </p>
+        </tr>
+
+        <tr style="background-color: #82ff9d;">
+            <p>
+                <td>. + ชื่อclass</td>
+                <td>.intro</td>
+                <td>มีผลกับแท็กที่กำหนด class="intro"</td>
+            </p>
+        </tr>
+
+        <tr style="background-color: #c3ffd0;">
+            <p>
+                <td>*</td>
+                <td>*</td>
+                <td>มีผลกับทุกแท็ก</td>
+            </p>
+        </tr>  
+
+        <tr style="background-color: #82ff9d;">
+            <p>
+                <td>การกำหนดแท็กลงไปตรงๆ</td>
+                <td>p</td>
+                <td>มีผลกับทุก &lt;p&gt;</td>	
+            </p>
+        </tr>
+
+        <tr style="background-color: #c3ffd0;">
+            <p>
+                <td>การกำหนดแท็กลงไปตรงๆแต่ใช้เครื่องหมาย , เพื่อเพิ่มแท็กเพิ่มเติม</td>
+                <td>div,p</td>
+                <td>มีผลกับทุกแท็ก &lt;div&gt; และ &lt;p&gt;</td>
+            </p>
+        </tr>
+    </table>
+</div>
+
+    <br><br>
+
+    <a href="p01_cssselectors_excod.html">
+        <button class="ITISBUTTON" style="font-size: 18px;">ตัวอย่างผลลัพธ์</button>
+    </a>
+
+    <br><br>
+
+    <button class="ITISB_BUTTON" onclick="history.back()">ย้อนกลับ</button>
+
+</body>
+</html>

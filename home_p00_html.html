@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage HTML_723_726</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        .ITISNOTBUTTON {
+            background-color: #28a745;
+            color: white;
+            padding: 9px 10px;
+            border: none;
+            border-radius: 5px;
+            width: 200px;
+            font-size: 18px;
+        }
+
+        .ITISBUTTON {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 200px;
+            font-size: 18px;
+        }
+
+        .ITISBUTTON:hover {
+            background-color: #218838;
+        }
+        .CTN {
+            text-align: center;
+        }
+/*โค๊ดส่วน ber menu------------------------------------------------*/
+        .image-box {
+            background-image: url('img/icon/home_iden.png'); /* รูปปกติ */
+            background-size: cover; /* แสดงรูปให้เต็มพื้นที่ */
+            transition: 0.3s; /* เพิ่มความสมูทตอนเปลี่ยนรูป */
+            width: 60px;
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .image-box:hover {
+            background-image: url('img/icon/home_hover.png'); /* รูปตอนเอาเมาส์ชี้ */
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: #333;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-radius: 8px;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff9800;
+        }
+
+        /* จัดการรายการเมนู */
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            padding: 0 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            border-radius: 5px;
+            padding: 10px 8px;
+            color: white;
+            background-color: #333;
+            transition: 0.3s;
+            margin: 5px 5px;
+        }
+
+        .nav-links a:hover {
+            color: #ff9800;
+            background-color: #ffffff;
+        }
+/*โค๊ดส่วน dropdown menu------------------------------------------------*/
+        .dropdown {
+            position: relative; /* เพื่อให้เมนูย่อยอ้างอิงตำแหน่งจากตัวมัน */
+            width: 35px;
+            }
+        /* ซ่อนเมนูย่อยไว้ */
+        .dropdown-content {
+            display: none;
+            position: absolute; /* ลอยทับเนื้อหาด้านล่าง */
+            background-color: #444; /* สีพื้นหลังเมนูย่อย */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            list-style: none;
+            padding: 0;
+            top: 150%; /* ให้เริ่มแสดงต่อจากขอบล่างของเมนูหลักพอดี */
+            left: 0;
+            text-align: center;
+            border-radius: 8px;
+        }
+        /* ปรับแต่งรายการในเมนูย่อย */
+        .dropdown-content li a {
+            color: white;
+            padding: 4px 16px;
+            display: block; /* ให้คลิกได้เต็มแถว */
+            text-decoration: none;
+            width: 200px;
+        }
+
+        /* --- ส่วนสำคัญ: เมื่อเอาเมาส์ชี้ที่ .dropdown ให้แสดง .dropdown-content --- */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+/*โค๊ดส่วน footer บาร์แสดงเครดิต------------------------------------------------*/
+        .footer-credit {
+            background-color: #333;   /* สีพื้นหลัง (สีเทาเข้มเหมือนแถบเมนูของคุณ) */
+            color: white;             /* สีตัวอักษร */
+            text-align: center;       /* จัดข้อความให้อยู่ตรงกลาง */
+            padding: 10px 0;          /* เพิ่มระยะห่างบน-ล่าง */
+            width: 100%;              /* ให้กว้างเต็มหน้าจอ */
+            font-family: Arial, sans-serif; /*ไม่ขยับตามการ Scroll*/
+            margin-top: 50px;         /* เว้นระยะจากกล่องสีส้มลงมา */
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<!-- บาร์หัวเว็บ------------------------------------------------------------------------------ -->
+    <header class="navbar">
+        <div class="image-box"><a href="#"></a></div>
+    
+        <div class="logo">LearnCode.</div>
+
+        <nav>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a>HTML</a>
+                    <ul class="dropdown-content">
+                        <li><a href="p01_htmlbasic.html">HTML Basic</a></li>
+                        <li><a href="p02_htmlattributes.html">HTML Attributes</a></li>
+                        <li><a href="p03_htmlformatting.html">HTML Formatting</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a>CSS</a>
+                    <ul class="dropdown-content">
+                        <li><a href="p01_cssselectors.html">CSS Selectors</a></li>
+                        <li><a href="p02_csshowto.html">How To Add CSS</a></li>
+                        <li><a href="p03_cssborderstyle.html">CSS Border Style</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+<!-- หัวเว็บ------------------------------------------------------------------------------ -->
+    <p style="text-align: center;color: rgb(40, 40, 40);font-size: 60px;margin: auto;padding: 15px 0; ;"><b>WELCOME</b></p>
+<!-- กล่องสีส้ม HTML------------------------------------------------------------------------------ -->
+<div style="padding-left: 625px;">
+    <div style="background-color: #ffb048;border-radius: 20px;width: 650px;height: 300px;display: flex;justify-content: center;align-items: center;">
+        <div style="padding-right: 50px;">
+            <p style="font-size: 100px;color: #2c1a01;">HTML</p>
+        </div>
+        <div class="CTN">
+            <a class="ITISNOTBUTTON">1.</a>
+            <a href="p01_htmlbasic.html">
+                <button class="ITISBUTTON">HTML Basic</button>
+            </a>
+
+                <br><br>
+
+            <a class="ITISNOTBUTTON">2.</a>
+            <a href="p02_htmlattributes.html">
+                <button class="ITISBUTTON">HTML Attributes</button>
+            </a>
+
+                <br><br>
+
+            <a class="ITISNOTBUTTON">3.</a>
+            <a href="p03_htmlformatting.html">
+                <button class="ITISBUTTON">HTML Formatting</button>
+            </a>
+
+                <br><br>
+        </div>
+    </div>
+</div>
+<!-- กล่องน้ำเงิน CSS------------------------------------------------------------------------------ -->
+<div style="padding-left: 625px;padding-top: 25px;">
+    <div style="background-color: #3550ff;border-radius: 20px;width: 650px;height: 300px;display: flex;justify-content: center;align-items: center;">
+        <div style="padding-right: 50px;">
+            <p style="font-size: 100px;color: #01032c;">CSS</p>
+        </div>
+        <div class="CTN" style="margin-left: 70px;">
+            <a class="ITISNOTBUTTON">1.</a>
+            <a href="p01_cssselectors.html">
+                <button class="ITISBUTTON">CSS Selectors</button>
+            </a>
+
+                <br><br>
+
+            <a class="ITISNOTBUTTON">2.</a>
+            <a href="p02_csshowto.html">
+                <button class="ITISBUTTON">How To Add CSS</button>
+            </a>
+
+                <br><br>
+
+            <a class="ITISNOTBUTTON">3.</a>
+            <a href="p03_cssborderstyle.html">
+                <button class="ITISBUTTON">CSS Border Style</button>
+            </a>
+
+                <br><br>
+        </div>
+    </div>
+</div>
+
+<footer class="footer-credit">
+    <p>© 2024 LearnCode. Submit To The Professor.. &nbsp;&nbsp;|&nbsp;&nbsp; By&nbsp; นายศุภกร แซ่ก้วย 723 &nbsp;&&nbsp; นายอารยธรรม สุดรัก 726</p>
+</footer>
+</body>
+</html>
